@@ -24,9 +24,9 @@ class Getpages:
        return 301000000
     def get_followers(self, profile):
        self.driver.get('https://www.instagram.com/' + profile)
-       flw_btn = WebDriverWait(self.driver, 11).until(EC.presence_of_element_located((By.XPATH, '//*[@id="react-root"]/section/main/div/header/section/ul/li[2]/a')))
+       flw_btn = WebDriverWait(self.driver, 11).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div/div/section/main/div/header/section/ul/li[2]/a')))
        flw_btn.click()
-       popup = WebDriverWait(self.driver, 11).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[4]/div/div/div[2]'))/html/body/div[1]/section/main/div/header/section/ul/li[3]/a)
+       popup = WebDriverWait(self.driver, 11).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[6]/div/div/div[2]')))
        for h in range(30):
            time.sleep(1)
            self.driver.execute_script('arguments[0].scrollTop = arguments[0].scrollHeight/{}'.format(str(11-h)), popup)

@@ -18,14 +18,14 @@ driver = 0
 def main():
     global driver
     print("Go!")
-    driver = webdriver.Chrome('C://Users/wkali/Desktop/IGBOT/chromedriver.exe')
+    driver = webdriver.Chrome('./chromedriver.exe')
     driver.maximize_window()
     l = login.Login(driver, username, password)
     l.signin()
-    info_btn = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[4]/div/div/div/div[3]/button[2]')))
+    info_btn = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div/div/section/main/div/div/div/div/button')))
     info_btn.click()
     gp = getpages.Getpages(driver)
-    refs = gp.get_followers(username)
+    refs = gp.get_followers(profile)
     if profile == "":
         unfollow_bot(refs,driver,gp)
     else:
