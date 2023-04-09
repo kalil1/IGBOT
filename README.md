@@ -1,0 +1,2 @@
+# IGBOT
+There are many different methods to increasing your engagement on Instagram. One example that is very simple, find someone with a lot of followers, follow their followers, engage with their posts hopefully they’ll return the engagement and or follow back. Now this method could take forever to gain you thousands of followers/likes and if your activity is sporadic Instagram may temporarily ban you. Lucky I’ve built an application to automate this entire task without getting your account flagged for suspension.
