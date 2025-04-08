@@ -65,9 +65,9 @@ if __name__ == "__main__":
 
 def get_followers(self, profile):
 self.driver.get('https://www.instagram.com/' + profile)
-flw_btn = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, '//*[@id="react-root"]/section/main/div/header/section/ul/li[2]/a')))
+flw_btn = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.PARTIAL_LINK_TEXT, 'followers')))
 flw_btn.click()
-popup = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[4]/div/div/div[2]')))
+popup = WebDriverWait(self.driver, 5).until(EC.presence_of_element_located((By.CSS_SELECTOR, 'div[role="dialog"] ul')))
 for h in range(30):
     time.sleep(1)
     self.driver.execute_script('arguments[0].scrollTop = arguments[0].scrollHeight/{}'.format(str(11-h)), popup)

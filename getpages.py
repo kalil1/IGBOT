@@ -88,7 +88,7 @@ class Getpages:
         #     return  False
     def follow_page(self):
         try:
-            button = self.driver.find_element_by_xpath('//*[@id="react-root"]/section/main/div/header/section/div[1]/div[1]/div/div/div/span/span[1]/button')
+            button = WebDriverWait(self.driver, 5).until(EC.element_to_be_clickable((By.XPATH, '//button[contains(text(), "Follow")]')))
             button.click()        
             return True
         except: 
